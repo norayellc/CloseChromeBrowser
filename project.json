@@ -1,7 +1,7 @@
 {
-  "name": "CloseChromeBrowser",
-  "description": "CloseChromeBrowser",
-  "main": "CloseChromeBrowser.xaml",
+  "name": "CloseChrome",
+  "description": "CloseChrome",
+  "main": "CloseChrome.xaml",
   "dependencies": {
     "UiPath.System.Activities": "[21.4.1]",
     "UiPath.UIAutomation.Activities": "[21.4.4]"
@@ -40,7 +40,7 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "CloseChromeBrowser.xaml",
+      "filePath": "CloseChrome.xaml",
       "uniqueId": "4ad40e12-0bce-4ced-8540-7b36fe214832",
       "input": [],
       "output": []
