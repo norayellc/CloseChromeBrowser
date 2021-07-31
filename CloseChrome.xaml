@@ -57,50 +57,29 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CloseChromeBrowser" sap:VirtualizedContainerService.HintSize="558,1086" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="CloseChromeBrowser" sap:VirtualizedContainerService.HintSize="554,1086" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="BrowserExist" />
       <Variable x:TypeArguments="x:String" Name="WorkflowName">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">CloseChromeBrowser</Literal>
+          <Literal x:TypeArguments="x:String">CloseChrome</Literal>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Boolean" Name="IsChildWorkflow">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" Value="True" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="CWD">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory + &quot;\”" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="IsChildWorkflow" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.CurrentDirectory + &quot;\”]" Name="CWD" />
       <Variable x:TypeArguments="x:Boolean" Default="[If(IsChildWorkflow AndAlso Not Cwd.EndsWith(WorkflowName + &quot;\&quot;), True, False)]" Name="WorkflowInvoked" />
-      <Variable x:TypeArguments="x:String" Name="SolutionDir">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="If(IsChildWorkflow AndAlso Not WorkflowInvoked, Path.GetDirectoryName(Path.GetDirectoryName(cwd.TrimEnd(&quot;\&quot;c).ToCharArray)) + &quot;\&quot;, cwd)" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="WorkflowsDir">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SolutionDir + &quot;.workflows\&quot;" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="WorkflowDir">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="If(IsChildWorkflow AndAlso WorkflowInvoked, WorkflowsDir + WorkflowName + &quot;\&quot;, cwd)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[If(IsChildWorkflow AndAlso Not WorkflowInvoked, Path.GetDirectoryName(Path.GetDirectoryName(cwd.TrimEnd(&quot;\&quot;c).ToCharArray)) + &quot;\&quot;, cwd)]" Name="SolutionDir" />
+      <Variable x:TypeArguments="x:String" Default="[SolutionDir + &quot;.workflows\&quot;]" Name="WorkflowsDir" />
+      <Variable x:TypeArguments="x:String" Default="[If(IsChildWorkflow AndAlso WorkflowInvoked, WorkflowsDir + WorkflowName + &quot;\&quot;, cwd)]" Name="WorkflowDir" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="516,183" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Initialize" sap:VirtualizedContainerService.HintSize="512,183" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,7 +88,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Start Close Chrome Browser &quot;]" />
     </Sequence>
-    <Sequence DisplayName="CloseChromeBrowser" sap:VirtualizedContainerService.HintSize="516,548" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="CloseChromeBrowser" sap:VirtualizedContainerService.HintSize="512,548" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +149,7 @@
         </ui:InterruptibleDoWhile.Body>
       </ui:InterruptibleDoWhile>
     </Sequence>
-    <Sequence DisplayName="Finalize" sap:VirtualizedContainerService.HintSize="516,183" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence DisplayName="Finalize" sap:VirtualizedContainerService.HintSize="512,183" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
